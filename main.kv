@@ -1,0 +1,44 @@
+<MainPage>:
+    MDBoxLayout:
+        orientation:'vertical'
+        MDTopAppBar:
+            id:tbar
+            title:app.nam
+            left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+        
+        MDLabel:
+            id:text
+            text:'Hello world!'
+            halign:'center'
+            
+    MDNavigationDrawer:
+        id: nav_drawer
+        radius: (0, 16, 16, 0)
+        
+        MDNavigationDrawerMenu
+            MDNavigationDrawerHeader:
+                id:ttool
+                spacing: "2dp"
+                padding: "16dp", 0, 0, "16dp"
+                title:app.nam
+                text:"Description"
+                
+            MDNavigationDrawerDivider:
+            MDNavigationDrawerItem
+                icon: "close"
+                text_right_color: "#4a4939"
+                text: "Cancel"
+                on_release: nav_drawer.set_state("close")
+                
+<Page>:
+    MDBoxLayout:
+        orientation:'vertical'
+        MDTopAppBar:
+            id:tbar
+            title:app.nam
+            right_action_items: [["home", lambda x: home()]]
+        
+        MDLabel:
+            id:text
+            text:'Hello world!'
+            halign:'center'
